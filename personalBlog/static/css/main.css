@@ -18,12 +18,18 @@ button {
     border: none;
     padding: 10px 50px;
     cursor: pointer;
-    background-color: #ff6e3e;
+    background-color: #f59649;
     color: #fff;
 }
 
+@media only screen and (max-width: 450px) {
+    button {
+        padding: 10px 40px;
+    }
+}
+
 button:hover {
-    background-color: #f59649;
+    background-color: #ff6e3e;
 }
 
 /*解决子元素浮动之后父元素坍缩的方法*/
@@ -46,12 +52,31 @@ button:hover {
     letter-spacing: 1px;
 }
 
+@media only screen and (max-width: 450px) {
+    .sub-heading {
+        line-height: 20px;
+        font-size: 0.8em;
+    }
+}
+
 .main-wrapper {
     background: url(../images/banner.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+}
+
+@media only screen and (max-width: 500px){
+    .main-wrapper {
+        /*background: #9a647e;*/
+        background: url(../images/banner-sm.jpg);
+        /*background-attachment: fixed;*/
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: top;
+        /*background-size: cover;*/
+    }
 }
 
 /*header*/
@@ -67,7 +92,7 @@ nav {
 
 nav .logo {
     float: left;
-    margin: 0 3%;
+    margin: 0 0 0 3%;
     line-height: 50px;
     font-size: 1.5em;
     letter-spacing: 2px;
@@ -81,15 +106,14 @@ nav .logo:hover {
 nav ul {
     float: right;
     list-style: none;
-    margin: 0 2%;
-
+    margin: 0 3%;
 }
 
 nav ul li {
     /*设置list横行排列*/
     /*设置line-height之后文字会垂直方向居中*/
     display: inline-block;
-    padding: 0 15px;
+    padding: 0 10px;
     line-height: 50px;
 }
 
@@ -107,27 +131,39 @@ nav ul li a.active {
 
 .banner {
     height: 700px;
-    /*background-color: grey;*/
     color: #fff;
 }
 
 .banner .inner {
     position: relative;
-    max-width: 300px;
+    max-width: 60%;
     margin: 0 auto;
     top: 150px;
     text-align: center;
 }
 
 .banner .inner h1 {
-    margin: 0;
+    max-width: 300px;
+    margin: 0 auto;
     padding: 5% 0;
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
 }
 
+@media only screen and (max-width: 500px) {
+    .banner .inner h1 {
+        max-width: 200px;
+        margin: 0 auto;
+        padding: 5% 0;
+        font-weight: 500;
+        font-size: 20px;
+        /*border-top: none;*/
+        /*border-bottom: 2px solid #fff;*/
+    }
+}
+
 .banner .inner button {
-    margin-top: 40%;
+    margin: 20% 0 10% 0;
 }
 
 .banner .inner .more {
@@ -202,29 +238,49 @@ nav ul li a.active {
     width: 100%;
 }
 
+/*.text-section > * {*/
+    /*max-width: 50%;*/
+    /*!*margin-right: 0;*!*/
+/*}*/
+
 .section-two .article-preview .text-section {
-    position: relative;
-    top: 70px;
-    left: 70px;
-    width: 55%;
+    /*position: relative;*/
+    /*top: 5%;*/
+    /*left: 5%;*/
+    /*实现文字上、左有一定边距，且充满剩余宽度*/
+    /*一定要使用%为单位，原教程的px单位有问题*/
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 50%;
 }
 
 .section-two .article-preview .text-section h2 {
-    font-size: 1.5em;
+    /*position: absolute;*/
+    font-size: 1.3em;
+}
+
+@media only screen and (max-width: 550px) {
+    .section-two .article-preview .text-section h2 {
+        font-size: 1em;
+    }
 }
 
 .section-two .article-preview .text-section .sub-heading {
     font-size: 15px;
+    /*position: absolute;*/
+
 }
 
-.text-section > div {
-    max-width: 80%;
+@media only screen and (max-width: 550px) {
+    .section-two .article-preview .text-section .sub-heading {
+        margin-top: 5%;
+    }
 }
 /*end of section two*/
 
 /*section three*/
 .section-three {
-    padding: 80px;
+    padding: 8%;
     background-color: rgba(158, 94, 124, 0.9);
 }
 
@@ -246,6 +302,18 @@ nav ul li a.active {
     -moz-box-sizing:border-box; /* Firefox */
     -webkit-box-sizing:border-box; /* Safari */
     padding: 5%;
+}
+
+@media only screen and (max-width: 500px) {
+    .card {
+        float: left;
+        width: 50%;
+        min-height: 150px;
+        box-sizing:border-box;
+        -moz-box-sizing:border-box; /* Firefox */
+        -webkit-box-sizing:border-box; /* Safari */
+        padding: 5%;
+    }
 }
 
 .card:nth-child(1) {
@@ -300,3 +368,4 @@ footer .share-group ul li a:hover {
 footer .copy {
     text-align: center;
 }
+/*end of footer*/
