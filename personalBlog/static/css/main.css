@@ -125,6 +125,10 @@ nav ul li a {
     color: #fff;
 }
 
+nav ul li a:hover {
+    border-bottom: 3px solid #fff;
+}
+
 nav ul li a.active {
     border-bottom: 3px solid #fff;
 }
