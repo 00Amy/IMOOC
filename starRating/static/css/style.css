@@ -1,0 +1,32 @@
+body, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.rating {
+    margin: 5% auto;
+    width: 190px;
+    height: 32px;
+    list-style: none;
+}
+
+.rating-item {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: url(../img/star.png) no-repeat;
+    cursor: pointer;
+}
+
+.info {
+    margin: 5% auto;
+    width: 80%;
+}
+
+.info h2 {
+    text-align: center;
+}
