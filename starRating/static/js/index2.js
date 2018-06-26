@@ -29,10 +29,20 @@ var rating = (function () {
         });
     };
 
+    // jQuery插件（不太懂）
+    $.fn.extend({
+        starRating: function(num) {
+            return this.each(function() {
+                init(this, num)
+            })
+        }
+    });
+
     return {
         initFn: init
     };
 
 })();
 
-rating.initFn('#rating2', 3);
+rating.initFn('#rating2-1', 3);
+$('#rating2-2').starRating(4); //插件式调用
