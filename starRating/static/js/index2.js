@@ -30,6 +30,8 @@ var rating = (function () {
     };
 
     // jQuery插件（不太懂）
+    // 两个this都代表传入进来的值。因为传入值可能是个类（而不是id），所以会有多个，因此才写了each遍历
+    // 插件式调用时可分别传入class和id，对比效果的不同
     $.fn.extend({
         starRating: function(num) {
             return this.each(function() {
@@ -45,4 +47,5 @@ var rating = (function () {
 })();
 
 rating.initFn('#rating2-1', 3);
+//$('.rating').starRating(4); //插件式调用
 $('#rating2-2').starRating(4); //插件式调用
