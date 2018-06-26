@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>星级评分 - 2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+<div class="info">
+    <h2>星级评分2.0</h2>
+    <p>改进：</p>
+    <ul>
+        <li>1. 解决了1.0中全局变量的问题（使用自我执行的匿名函数
+        </li>
+        <li>2. 解决了1.0中为每个li都绑定了事件的问题（使用事件委托，给父元素ul绑定事件）
+        </li>
+        <li>3. 实现了代码复用（并且进一步扩展为了jquery插件）</li>
+    </ul>
+</div>
+
+<ul class="rating" id="rating2">
+    <!--star-width/height = 26px-->
+    <li class="rating-item" title="很差"></li>
+    <li class="rating-item" title="较差"></li>
+    <li class="rating-item" title="一般"></li>
+    <li class="rating-item" title="较好"></li>
+    <li class="rating-item" title="很好"></li>
+</ul>
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="../static/js/index2.js"></script>
+</body>
+</html>
