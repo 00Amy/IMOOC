@@ -25,6 +25,7 @@ li {
 .info {
     margin: 5% auto;
     width: 80%;
+    line-height: 2;
 }
 
 .info h2 {
