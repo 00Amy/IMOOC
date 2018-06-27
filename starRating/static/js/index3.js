@@ -34,12 +34,18 @@ var rating = (function  () {
         });
     };
     lightEntire.prototype.bindEvents = function () {
-        self = this;
+        var self = this,
+            itemLength = self.$item.length;
 
         self.$el.on('mouseover', '.rating-item', function () {
-            self.lightOn($(this).index() + 1);
+            var currentId = $(this).index() + 1;
+
+            self.lightOn(currentId);
+            (typeof self.opts.select === 'function') && self.opts.select(currentId, itemLength);
         }).on('click', '.rating-item', function () {
             self.opts.num = $(this).index() + 1;
+            (typeof self.opts.chosen === 'function') && self.opts.chosen(self.opts.num, itemLength);
+
         }).on('mouseout', function () {
             self.lightOn(self.opts.num);
         });
@@ -58,5 +64,11 @@ var rating = (function  () {
 })();
 
 rating.initFn('#rating3-1',{
-    num: 1
+    num: 1,
+    select: function (num, total) {
+        console.log(num + '/' + total);
+    },
+    chosen: function (num, total) {
+        console.log('click:' + num + '/' + total);
+    }
 });
